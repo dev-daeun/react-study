@@ -3,7 +3,8 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Button from './components/Button';
-import Bulb from "./components/Bulb";
+import State from "./components/State";
+import BulbButton from './components/Bulb';
 
 // Header, Main, Footer 컴포넌트는 App 컴포넌트의 자식 컴포넌트
 function App() {
@@ -26,7 +27,8 @@ function App() {
 
       <Main/>
 
-      <Bulb/>
+      <BulbButton/>
+      <State/>
     
       <Footer/>
     </>

@@ -1,42 +1,22 @@
 import React, { useState } from "react";
 
 
-const getNextState = (currentState) => {
-    const init = "INIT";
-    const processing = "PROCESSING";
-    const completed = "COMPLETED";
-
-    if (currentState == init) {
-        return processing
-    }
-    else if (currentState == processing) {
-        return completed
-    }
-    else {
-        return completed
-    }
-}
-
-const Bulb = () => {
-    const [count, setCount] = useState(0);
-    const [light, setLight] = useState("INIT");
-
+const Bulb = ({light}) => {
     return (
-        <>
-            <div>
-                <h3>전구 프로세싱</h3>
-                <button onClick={() => {
-                    setLight(getNextState(light));
-                }}>{light}</button>
-            </div>
-            <div>
-                <h3>숫자 늘리기</h3>
-                <button onClick={() => {
-                    setCount(count + 1);
-                }}>{count}</button>
-            </div>
-        </>
-   )
+        <div>
+            {light == "ON" ? <h1 style={{backgroundColor: "orange"}}>ON</h1> : <h1 style={{backgroundColor: "gray"}}>OFF</h1>}
+        </div>
+    )
 }
 
-export default Bulb;
+const BulbButton = () => {
+    const [light, setLight] = useState("OFF");
+    
+    return (
+        <div>
+            <button onClick={() => {setLight(light == "ON" ? "OFF" : "ON")}}>전구 껐다 켜기</button>
+            <Bulb light = {light}/>
+        </div>
+    )
+}
+export default BulbButton;
