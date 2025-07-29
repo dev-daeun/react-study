@@ -6,6 +6,7 @@ import Button from './components/Button';
 import State from "./components/State";
 import BulbButton from './components/Bulb';
 import Register from './components/RegisterUser';
+import HookSample from './components/CustomHook';
 
 // Header, Main, Footer 컴포넌트는 App 컴포넌트의 자식 컴포넌트
 function App() {
@@ -32,6 +33,8 @@ function App() {
       <State/>
     
       <Register/>
+
+      <HookSample/>
     
       <Footer/>
     </>
